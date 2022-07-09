@@ -11,8 +11,6 @@ const Card = ({ book }) => {
                 book.map((item) => {
                     let thumbnail=item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
                     let amount=item.saleInfo.listPrice && item.saleInfo.listPrice.amount;
-                    if(thumbnail!==undefined && amount !==undefined)
-                    {
                         return (
                             <>
                             <div className="card" onClick={()=>{setShow(true);setItem(item)}}>
@@ -25,7 +23,7 @@ const Card = ({ book }) => {
                               <Modal show={show} item={bookItem} onClose={()=>setShow(false)}/>
                             </>
                         )
-                    }
+                    
                     
                 })
             }
