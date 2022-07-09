@@ -49,6 +49,25 @@ html{
     margin-top: 30px;
     width: 250px;
 }
+.header1{
+    margin-left: 18rem;
+}
+@media screen and (max-width: 992px) {
+    .row2 {
+      left: 8rem;
+      justify-content: center;
+    }
+    .book-image{
+        display: none;
+    }
+    .header1{
+        margin-left: 8rem;
+        margin-top: 20rem;
+        width: 200px;
+        text-align: center;
+        justify-content: center;
+    }
+}
 .row1 h1{
     font-size: 3rem;
     text-align: center;
