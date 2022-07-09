@@ -1,47 +1,6 @@
-import react, { useState } from "react";
+import react ,{useState}from "react";
 import Modal from "./Modal";
 const Card = ({ book }) => {
-
-  const [show, setShow] = useState(false);
-  const [bookItem, setItem] = useState();
-  console.log(book);
-  return (
-    <>
-      {book?.map((item, id) => {
-        let thumbnail =
-          item.volumeInfo.imageLinks &&
-          item.volumeInfo.imageLinks.smallThumbnail;
-        let amount = item.saleInfo.listPrice && item.saleInfo.listPrice.amount;
-        if (thumbnail !== undefined && amount !== undefined) {
-          return (
-            <>
-              <div
-                className="card"
-                onClick={() => {
-                  setShow(true);
-                  setItem(item);
-                }}
-                key={id}
-              >
-                <img src={thumbnail} alt="" />
-                <div className="bottom">
-                  <h3 className="title">{item.volumeInfo.title}</h3>
-                  <p className="amount">&#8377;{amount}</p>
-                </div>
-              </div>
-              <Modal
-                show={show}
-                item={bookItem}
-                onClose={() => setShow(false)}
-              />
-            </>
-          );
-        }
-      })}
-    </>
-  );
-};
-=======
 
     const [show,setShow]=useState(false);
     const [bookItem,setItem]=useState();
@@ -49,9 +8,10 @@ const Card = ({ book }) => {
     return (
         <>
             {
-                book.map((item) => {
+                book?.map((item, id) => {
                     let thumbnail=item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
                     let amount=item.saleInfo.listPrice && item.saleInfo.listPrice.amount;
+                    
                         return (
                             <>
                             <div className="card" onClick={()=>{setShow(true);setItem(item)}}>
@@ -72,5 +32,4 @@ const Card = ({ book }) => {
         </>
     )
 }
-
 export default Card;
