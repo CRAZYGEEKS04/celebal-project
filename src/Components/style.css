@@ -57,6 +57,12 @@ html{
     --primary-color:#105D90;
     --secondary-color:#D1ECE7;
 }
+    body{
+    background-color: var(--primary-color);
+}
+    .header{
+        color: var(--secondary-color);
+    }
     .row2 {
       left: 8rem;
       justify-content: center;
